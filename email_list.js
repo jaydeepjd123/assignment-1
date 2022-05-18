@@ -20,7 +20,7 @@ const joinList = [selector];
     }
 
     if (email1 != email2) { 
-        $("#email_2_error").textContent = "Emails must match."; //saas
+        $("#email_2_error").textContent = "Emails must match."; 
         isValid = false;
     } else { 
         $("#email_2_error").textContent = ""; 
