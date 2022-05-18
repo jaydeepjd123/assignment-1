@@ -1,17 +1,15 @@
 "use strict"
 
-const selector = document.querySelector(selector);
+const $ = selector => document.querySelector(selector);
 
-
-const joinList = [selector];
-{
+const joinList = () => {
     // get user entries from text boxes
     const email1 = $("#email_1").value;
     const email2 = $("#email_2").value;
     const firstName = $("#first_name").value;
      
     // check user entries
-    
+    let isValid = true;
     if (email1 == "") { 
         $("#email_1_error").textContent = "Email is required.";
         isValid = false;
@@ -20,7 +18,7 @@ const joinList = [selector];
     }
 
     if (email1 != email2) { 
-        $("#email_2_error").textContent = "Emails must match."; 
+        $("#email_2_error").textContent = "Emails must match.";
         isValid = false;
     } else { 
         $("#email_2_error").textContent = ""; 
@@ -39,8 +37,7 @@ const joinList = [selector];
     }
 };
 
-const clearForm = [selector];
-{
+const clearForm = () => {
     // clear text boxes
     $("#email_1").value = "";
     $("#email_2").value = "";
@@ -55,12 +52,11 @@ const clearForm = [selector];
     $("#email_1").focus();
 };
 
-document.addEventListener("DOMContentLoaded") 
-{
+document.addEventListener("DOMContentLoaded", () => {
     // hook up click events for both buttons
     $("#join_list").addEventListener("click", joinList);
     $("#clear_form").addEventListener("click", clearForm);
 
     // set focus on first text box after the form loads
     $("#email_1").focus();
-}
+});
