@@ -35,7 +35,7 @@ const joinList = [selector];
 
     // submit the form if user entries are valid
     if ( isValid ) {
-        $("#email_form").submitt(); 
+        $("#email_form").submit(); 
     }
 };
 
